@@ -98,6 +98,9 @@ class BootstrapTableSpider(scrapy.Spider):
 
 
         for row in m:
+            # Convertir fecha del tipo d/m/yyyy al tipo ISO 8601 yyyy-mm-dd
+            row.fecha = row.fecha.split("/")[2].zfill(2) + "-" + row.fecha.split("/")[1].zfill(2) + "-" + row.fecha.split("/")[0].zfill(2)
+            
             s = json.dumps(row.__dict__)
             print('DATA -> ' + s)
             # Enviar los datos obtenidos por POST al backend de un sistema
