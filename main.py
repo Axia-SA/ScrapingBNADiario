@@ -5,9 +5,8 @@
 import os
 
 def main():
-	os.system("scrapy runspider scrapCotizacionBna.py")
-	print('Terminado.')
+        os.system("/usr/bin/python3 %DIRECTORIO%/scrapCotizacionBna.py")
+        print('Terminado.')
 
 if __name__ == '__main__':
-	main()
-
+        main()
